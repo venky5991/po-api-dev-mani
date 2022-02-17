@@ -1,0 +1,136 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "po-configurations-dev",
+        "credentials": {
+          "query": {},
+          "header": {}
+        },
+        "tls": {
+          "validateCertificateChain": false,
+          "validateCertificateName": false
+        },
+        "url": "https://po-configuration-dev.azurewebsites.net",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-configurations-dev')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "description": "po-globaldata-dev",
+        "credentials": {
+          "query": {},
+          "header": {}
+        },
+        "tls": {
+          "validateCertificateChain": false,
+          "validateCertificateName": false
+        },
+        "url": "https://po-globaldata-dev.azurewebsites.net",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-globaldata-dev')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "description": "po-inspection-dev\n",
+        "credentials": {
+          "query": {},
+          "header": {}
+        },
+        "tls": {
+          "validateCertificateChain": false,
+          "validateCertificateName": false
+        },
+        "url": "https://po-inspection-dev.azurewebsites.net/",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-inspection-dev')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "description": "po-listing-dev",
+        "credentials": {
+          "query": {},
+          "header": {}
+        },
+        "tls": {
+          "validateCertificateChain": false,
+          "validateCertificateName": false
+        },
+        "url": "https://po-listing-dev.azurewebsites.net",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-listing-dev')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "credentials": {
+          "query": {},
+          "header": {}
+        },
+        "tls": {
+          "validateCertificateChain": false,
+          "validateCertificateName": false
+        },
+        "url": "https://po-notification-dev.azurewebsites.net/api",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-notification-dev')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "description": "po-profile-dev",
+        "credentials": {
+          "query": {},
+          "header": {}
+        },
+        "tls": {
+          "validateCertificateChain": false,
+          "validateCertificateName": false
+        },
+        "url": "https://po-profile-dev.azurewebsites.net",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-profile-dev')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "description": "po-support-dev",
+        "credentials": {
+          "query": {},
+          "header": {}
+        },
+        "tls": {
+          "validateCertificateChain": false,
+          "validateCertificateName": false
+        },
+        "url": "https://po-support-dev.azurewebsites.net",
+        "protocol": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-support-dev')]",
+      "type": "Microsoft.ApiManagement/service/backends",
+      "apiVersion": "2021-01-01-preview"
+    }
+  ]
+}

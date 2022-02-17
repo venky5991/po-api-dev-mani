@@ -1,0 +1,110 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-bot-dev",
+        "value": "https://po-bot-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-bot-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-configurations-dev",
+        "value": "https://po-configuration-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-configurations-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-globaldata-dev",
+        "value": "https://po-globaldata-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-globaldata-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-inspection-dev",
+        "value": "https://po-inspection-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-inspection-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-listing-dev",
+        "value": "https://po-listing-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-listing-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-masterdata-dev",
+        "value": "https://po-masterdata-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-masterdata-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-notification-dev",
+        "value": "https://po-notification-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-notification-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-profile-dev",
+        "value": "https://po-profile-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-profile-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    },
+    {
+      "properties": {
+        "tags": [],
+        "secret": false,
+        "displayName": "po-support-dev",
+        "value": "https://po-support-dev.azurewebsites.net/"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-support-dev')]",
+      "type": "Microsoft.ApiManagement/service/namedValues",
+      "apiVersion": "2021-01-01-preview"
+    }
+  ]
+}

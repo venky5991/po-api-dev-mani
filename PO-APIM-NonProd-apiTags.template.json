@@ -1,0 +1,1395 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "displayName": "FilterMetaData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-filtermetadata-budgettypes/FilterMetaData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "displayName": "FilterMetaData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-filtermetadata-vehicleparameters/FilterMetaData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-filtermetadata-budgettypes', 'FilterMetaData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-globaldata-cities/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-filtermetadata-vehicleparameters', 'FilterMetaData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-globaldata-countries/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-globaldata-cities', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61cc524f9e78ca69ff84251e/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-globaldata-countries', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61cc512e03c3a8e85462002b/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61cc524f9e78ca69ff84251e', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-globaldata-socialmedia/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61cc512e03c3a8e85462002b', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61dbfaf1eb06ecddb32e8d4a/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-globaldata-socialmedia', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-globaldata-statecities/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61dbfaf1eb06ecddb32e8d4a', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Inspection"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61efe556cfe74fd3fb127149/inspection')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-globaldata-statecities', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Listing"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/post-api-listing-search/Listing')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61efe556cfe74fd3fb127149', 'inspection')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-profile-activateaccount/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'post-api-listing-search', 'Listing')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-profile-deactivateaccount/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-profile-activateaccount', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-profile-resendverificationlink/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-profile-deactivateaccount', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-profile-user/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-profile-resendverificationlink', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/put-api-profile-user/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-profile-user', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-profile-validateuserprofile/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'put-api-profile-user', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d84bb463ab7049cd3fcbb2/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-profile-validateuserprofile', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/api-globaldata-faq/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d84bb463ab7049cd3fcbb2', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7c9ed66752b35532e6ded/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'api-globaldata-faq', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7c736ecfbaf1ff8fe921d/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7c9ed66752b35532e6ded', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7caac30c5423642b23507/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7c736ecfbaf1ff8fe921d', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61dec55c0f8d3b95950c7ea8/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7caac30c5423642b23507', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61dd74e85ca8f05228b8fe0d/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61dec55c0f8d3b95950c7ea8', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Support"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7cb4ee0d7f7a3caa2085e/support')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61dd74e85ca8f05228b8fe0d', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/post-api-vehicle-addbookmark/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7cb4ee0d7f7a3caa2085e', 'support')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-bodytype/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'post-api-vehicle-addbookmark', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61dbf3e9e2eaaf6dd8d4d7d7/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-bodytype', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-browsebycity/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61dbf3e9e2eaaf6dd8d4d7d7', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61c1d6a0f2b22730caf3822c/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-browsebycity', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61eab29b9a5f5e028eaec4c6/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61c1d6a0f2b22730caf3822c', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7c4fa05e2f2ae700957b4/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61eab29b9a5f5e028eaec4c6', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7c3ff4795c566f6b01d3a/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7c4fa05e2f2ae700957b4', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7c2cfffe820b5d69d706b/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7c3ff4795c566f6b01d3a', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/delete-api-vehicle-deletebookmark/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7c2cfffe820b5d69d706b', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa7086100a18056f0ea776/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'delete-api-vehicle-deletebookmark', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa7148b07e83b33ee0ee65/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa7086100a18056f0ea776', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fd1ae2ea26cfe05a77c281/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa7148b07e83b33ee0ee65', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa701211c8239e82c6cf9f/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fd1ae2ea26cfe05a77c281', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61f3c83940da6b748f412136/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa701211c8239e82c6cf9f', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-fueltype/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61f3c83940da6b748f412136', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa6dc1963b236c991ab0b8/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-fueltype', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-hotdeals/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa6dc1963b236c991ab0b8', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/62026a920b8ff121f5ca4ab0/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-hotdeals', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/6202065b17e1c97a38ccd984/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '62026a920b8ff121f5ca4ab0', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/6202058a0bc8337586533d5d/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '6202065b17e1c97a38ccd984', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/put-api-vehicle-listingsearch/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '6202058a0bc8337586533d5d', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-listingsearch/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'put-api-vehicle-listingsearch', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/delete-api-vehicle-listingsearch/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-listingsearch', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/post-api-vehicle-listingsearch/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'delete-api-vehicle-listingsearch', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa658f8fd4da13bb43d778/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'post-api-vehicle-listingsearch', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-makemodel/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa658f8fd4da13bb43d778', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa66c49ad84865ca90323d/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-makemodel', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa6aeb2f12af3116de231b/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa66c49ad84865ca90323d', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa6a2b16d172b9fcfcccbc/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa6aeb2f12af3116de231b', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa6405c82a60bc5dbdae2e/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa6a2b16d172b9fcfcccbc', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61deb674dc9b485048ec0d55/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa6405c82a60bc5dbdae2e', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7c5ab55a3da47ae2b7ff0/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61deb674dc9b485048ec0d55', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-popularbrands/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7c5ab55a3da47ae2b7ff0', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-popularcarsbycity/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-popularbrands', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-recentlylisted/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-popularcarsbycity', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-recentlyviewed/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-recentlylisted', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/post-api-vehicle-recentlyviewedbylistingids/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-recentlyviewed', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-sellerdetails/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'post-api-vehicle-recentlyviewedbylistingids', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa6b9c8825d93f2c05c9b8/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-sellerdetails', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/62026af117ec8f686a86e50f/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa6b9c8825d93f2c05c9b8', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61e53660c59d9b398c88b268/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '62026af117ec8f686a86e50f', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61e0233c17859fe04e268d01/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61e53660c59d9b398c88b268', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa72b7eec35bf99046f759/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61e0233c17859fe04e268d01', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/get-api-vehicle-trendingsearchesbycity/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa72b7eec35bf99046f759', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619776ee94dc167c5cd15288/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', 'get-api-vehicle-trendingsearchesbycity', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/62020df174ba46aab3867730/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619776ee94dc167c5cd15288', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/62020fdad3478f40f7df1330/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '62020df174ba46aab3867730', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61fa6e1734da9b4b187f51ec/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '62020fdad3478f40f7df1330', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Configuration"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61e6a1be62cf31d6c2466923/configuration')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61fa6e1734da9b4b187f51ec', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Configuration"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61efc18ae21bd1812a06d0ea/configuration')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61e6a1be62cf31d6c2466923', 'configuration')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Configuration"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61e6b8c0b3abf55aefba1226/configuration')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61efc18ae21bd1812a06d0ea', 'configuration')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "GlobalData"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619f7cbb564f6e5e237fa352/GlobalData')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61e6b8c0b3abf55aefba1226', 'configuration')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Notification"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61d7c633f891dd15ecbf3f9e/notification')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619f7cbb564f6e5e237fa352', 'GlobalData')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Notification"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61dd28d646474f2a3c100175/notification')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61d7c633f891dd15ecbf3f9e', 'notification')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619f925bba1874eb8c03c35c/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61dd28d646474f2a3c100175', 'notification')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619cc834d80b3fb16938dc51/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619f925bba1874eb8c03c35c', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/6194bd4d26d3f1029a066387/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619cc834d80b3fb16938dc51', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61b1cd7cec2d5ec675c5c5d0/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '6194bd4d26d3f1029a066387', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61b1f6b2bf38c971d6576e97/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61b1cd7cec2d5ec675c5c5d0', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619f85e4f38096a770394ea8/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61b1f6b2bf38c971d6576e97', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619cc74d3532374ad9aae210/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619f85e4f38096a770394ea8', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ced7e35736eec710583617/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619cc74d3532374ad9aae210', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ced7e35736eec710583617/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ced7e35736eec710583617', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619512e7edebc117ed0be2ee/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ced7e35736eec710583617', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61a4e21e20544fa9fa702419/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619512e7edebc117ed0be2ee', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619f871fd84390304ba112db/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61a4e21e20544fa9fa702419', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61af37c1b9d290e2f1af6383/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619f871fd84390304ba112db', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619f8944b1dc1b2ee5c9e105/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61af37c1b9d290e2f1af6383', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61b85f0a45d722ea786049ac/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619f8944b1dc1b2ee5c9e105', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619f87e20c97bdb46814778e/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61b85f0a45d722ea786049ac', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619b85c3af05140f4a757e3f/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619f87e20c97bdb46814778e', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ada3f215bca9c0d3a99dd7/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619b85c3af05140f4a757e3f', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ae145f89f7c85765c8716c/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ada3f215bca9c0d3a99dd7', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61b33ef456fecdf20360766f/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ae145f89f7c85765c8716c', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ada52a0bfbef1f804eb997/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61b33ef456fecdf20360766f', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ada4a6733b9f5d759fb59c/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ada52a0bfbef1f804eb997', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61baf66784acc2aa58cb6103/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ada4a6733b9f5d759fb59c', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ae14aff71d1f37be4b35eb/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61baf66784acc2aa58cb6103', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ada34bff45fe10f12ec50e/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ae14aff71d1f37be4b35eb', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61c2fcbe4291c341d963e3b1/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ada34bff45fe10f12ec50e', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61c2ff7dab3e6e85e7b6495f/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61c2fcbe4291c341d963e3b1', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61b1e04f66c64dd1e988a0b8/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61c2ff7dab3e6e85e7b6495f', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61c1a57334cca8040e3c680b/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61b1e04f66c64dd1e988a0b8', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ced41f46d32bdd2903257f/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61c1a57334cca8040e3c680b', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61b1cca4ba02f168f0c76f73/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ced41f46d32bdd2903257f', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61951384e7fbc273d65a6167/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61b1cca4ba02f168f0c76f73', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ada2b89a51fc4a9ca4c5d1/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61951384e7fbc273d65a6167', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61a4e146b945b268bfeeb338/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ada2b89a51fc4a9ca4c5d1', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ada5aaa3a3456e719530ac/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61a4e146b945b268bfeeb338', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61b1dff182cb95b0ae079064/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ada5aaa3a3456e719530ac', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/6194c11c23ae2c0502824bb0/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61b1dff182cb95b0ae079064', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619c945e48b5cc88588c081a/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '6194c11c23ae2c0502824bb0', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61c06ceed53da0977ab7ecb8/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619c945e48b5cc88588c081a', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61a0d41afbf28b157f18ed89/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61c06ceed53da0977ab7ecb8', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61a0d48f4af74a1b28b26f2a/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61a0d41afbf28b157f18ed89', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/61ada145b6b35c0f70ce4bd0/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61a0d48f4af74a1b28b26f2a', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Vehicle"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619baf29f895def3d1225595/Vehicle')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '61ada145b6b35c0f70ce4bd0', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619510254084474898d31180/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619baf29f895def3d1225595', 'Vehicle')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/619510c2d8f0045d48c4578f/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619510254084474898d31180', 'Profile')]"
+      ]
+    },
+    {
+      "properties": {
+        "displayName": "Profile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/po-api-dev/Profile')]",
+      "type": "Microsoft.ApiManagement/service/apis/tags",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations/tags', parameters('ApimServiceName'), 'po-api-dev', '619510c2d8f0045d48c4578f', 'Profile')]"
+      ]
+    }
+  ]
+}
